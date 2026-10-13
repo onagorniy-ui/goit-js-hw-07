@@ -27,11 +27,16 @@ const images = [
   },
 ];
 
+// Find gallery list element
 const galleryEl = document.querySelector('.gallery');
+
+// Create gallery items markup
 const markup = images
-  .map(image => {
-    return `<li><img src="${image.url}" class="gallery-image" alt="${image.alt}"></li>`;
-  })
+  .map(
+    ({ url, alt }) =>
+      `<li class="gallery-item"><img src="${url}" class="gallery-image" alt="${alt}"></li>`
+  )
   .join('');
 
+// Insert all gallery items into DOM in a single operation
 galleryEl.insertAdjacentHTML('beforeend', markup);

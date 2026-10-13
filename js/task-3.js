@@ -8,5 +8,5 @@ const nameOutput = document.querySelector('#name-output');
 nameInput.addEventListener('input', event => {
   const trimValue = event.target.value.trim();
   // conditional assignment
-  trimValue.length > 0 ? (nameOutput.textContent = trimValue) : (nameOutput.textContent = 'Anonymous');
+  nameOutput.textContent = trimValue !== '' ? trimValue : 'Anonymous';
 });
